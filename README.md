@@ -11,9 +11,7 @@ Streamlit と Supabase を用いて開発した、
 
 ## 🔗 アプリURL（試用はこちら）
 
-👉 **https://YOUR-APP-NAME.streamlit.app**
-
-※ Streamlit Community Cloud 上で公開しています。
+👉 https://super-duper-eureka-g49q4v6q6v5jhrgw-8501.app.github.dev/
 
 ---
 
