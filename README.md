@@ -1,19 +1,102 @@
-# 🎈 Blank app template
+# 💰 感情つき・変な家計簿（Supabase版）
 
-A simple Streamlit app template for you to modify!
+Streamlit と Supabase を用いて開発した、  
+**「感情」や「理由」まで一緒に記録できる家計簿アプリ**です。
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+単なる支出管理ではなく、  
+「なぜその支出をしたのか」「後悔しているのか、満足しているのか」  
+といった **行動の背景** も可視化することを目的としています。
 
-### How to run it on your own machine
+---
 
-1. Install the requirements
+## 🔗 アプリURL（試用はこちら）
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+👉 **https://YOUR-APP-NAME.streamlit.app**
 
-2. Run the app
+※ Streamlit Community Cloud 上で公開しています。
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+---
+
+## 🧾 主な機能
+
+### 1. 支出の記録（通常入力）
+以下の情報を1件ずつ記録できます。
+
+- 日付
+- 項目名（例：ランチ、バス代）
+- 金額
+- カテゴリ  
+  （食費 / 交通費 / 日用品 / 娯楽 / その他）
+- 感情  
+  （満足 / まあまあ / 後悔）
+- 理由（自由記述）
+- 「やめられなかった理由」
+  - 習慣
+  - ストレス
+  - ご褒美
+  - 逃避
+  - なんとなく
+
+---
+
+### 2. 自動カテゴリ判定（ユーザー定義）
+項目名に含まれる **キーワード** に応じて、
+カテゴリを自動で判定します。
+
+例：
+- 「バス」→ 交通費
+- 「コンビニ」→ 食費
+
+この判定ルールは **アプリ上から自由に追加・変更可能** です。
+
+---
+
+### 3. Supabase による永続保存
+- データベースには **Supabase（PostgreSQL）** を使用
+- アプリが停止・再起動しても **支出データは消えません**
+- SQLite などの簡易DBは使用していません
+
+---
+
+### 4. 集計・可視化
+登録されたデータをもとに、以下を自動表示します。
+
+- 合計支出額
+- カテゴリ別支出合計（棒グラフ）
+- 感情別支出合計（棒グラフ）
+
+---
+
+### 5. 労働時間換算
+サイドバーで **自分の時給** を設定すると、
+
+- 支出金額を  
+  👉「何時間分の労働か」に自動換算
+
+金額に対する実感を得やすくしています。
+
+---
+
+### 6. 支出履歴の閲覧・削除
+- すべての支出履歴を一覧表示
+- 不要なデータはその場で削除可能
+- カテゴリごとに人格（コメント）付き表示
+
+---
+
+## 🛠 使用技術
+
+- Python
+- Streamlit
+- Supabase（PostgreSQL）
+- pandas
+
+---
+
+## 🔐 環境変数（Secrets）
+
+Streamlit の `secrets` に以下を設定しています。
+
+```toml
+SUPABASE_URL = "https://xxxxx.supabase.co"
+SUPABASE_KEY = "your-anon-or-service-key"
