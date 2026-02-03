@@ -11,7 +11,7 @@ Streamlit と Supabase を用いて開発した、
 
 ## 🔗 アプリURL（試用はこちら）
 
-👉 https://super-duper-eureka-g49q4v6q6v5jhrgw-8501.app.github.dev/
+👉 https://blank-app-r1sjj6cbyvr.streamlit.app/
 
 ---
 
